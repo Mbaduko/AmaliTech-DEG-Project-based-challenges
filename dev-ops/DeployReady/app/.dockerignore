@@ -4,3 +4,5 @@ node_modules
 Dockerfile
 .dockerignore
 README.md
+.env.example
+.env
