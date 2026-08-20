@@ -11,7 +11,7 @@ jobs:
     steps:
       # Step 1: Test — run the test suite. If anything fails the pipeline stops here.
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
