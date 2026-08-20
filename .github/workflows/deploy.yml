@@ -35,6 +35,6 @@ jobs:
       - name: Build and Push Docker image
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./dev-ops/app
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/amalitech-deployready:${{ github.sha }}
