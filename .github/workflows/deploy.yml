@@ -18,15 +18,15 @@ jobs:
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: ./dev-ops/app/package-lock.json
+          cache-dependency-path: ./dev-ops/DeployReady/app/package-lock.json
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ./dev-ops/app
+        working-directory: ./dev-ops/DeployReady/app
 
       - name: Run tests
         run: npm test
-        working-directory: ./dev-ops/app
+        working-directory: ./dev-ops/DeployReady/app
 
       # Step 2: Build — build the Docker image and tag it with the Git commit SHA.
       - name: Log in to Docker Hub
