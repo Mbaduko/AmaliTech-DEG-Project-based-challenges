@@ -40,6 +40,7 @@ jobs:
         with:
           context: ./dev-ops/DeployReady/app
           push: true
+          platform: linux/arm64
           tags: ${{ secrets.DOCKERHUB_NAME }}/amalitech-deployready:${{ github.sha }}
 
       # Step 3: Deploy — SSH into the server, pull the new image, and restart the container.
