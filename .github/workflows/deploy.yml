@@ -60,4 +60,4 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_NAME }}/amalitech-deployready:${{ github.sha }}
             docker stop amalitech-deployready || true
             docker rm amalitech-deployready || true
-            docker run -d --name amalitech-deployready -p 3000:3000 --env-file /home/azureuser/amalitech-deployready/.env ${{ secrets.DOCKERHUB_NAME }}/amalitech-deployready:${{ github.sha }}
+            docker run -d --name amalitech-deployready -p 127.0.0.1:3000:3000 --env-file /home/azureuser/amalitech-deployready/.env ${{ secrets.DOCKERHUB_NAME }}/amalitech-deployready:${{ github.sha }}
