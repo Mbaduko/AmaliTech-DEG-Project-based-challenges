@@ -35,12 +35,15 @@ jobs:
           username: ${{ secrets.DOCKERHUB_NAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Build and Push Docker image
         uses: docker/build-push-action@v6
         with:
           context: ./dev-ops/DeployReady/app
           push: true
-          platforms: linux/arm64
+          platforms: linux/arm64, lineux/amd64
           tags: ${{ secrets.DOCKERHUB_NAME }}/amalitech-deployready:${{ github.sha }}
 
       # Step 3: Deploy — SSH into the server, pull the new image, and restart the container.
