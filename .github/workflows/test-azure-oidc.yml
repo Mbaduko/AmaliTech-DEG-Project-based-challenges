@@ -25,4 +25,4 @@ jobs:
             --resource-group AMALITECH \
             --name myVM \
             --command-id RunShellScript \
-            --scripts "echo 'GitHub OIDC successfully reached myVM'"
+            --scripts "docker ps"
